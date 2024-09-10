@@ -16,5 +16,5 @@ export function _toServerTimezone(app: ForumApplication | AdminApplication, time
  */
 export function _serverDateChangeAt(app: ForumApplication | AdminApplication) {
     const timezone = app.forum.attribute<string>("xypp.localize-date.timezone");
-    return dayjs.tz("00:00:00", timezone);
+    return dayjs.tz(dayjs().format("YYYY-DD-MM 00:00:00"), timezone);
 }

@@ -1,7 +1,12 @@
 import app from 'flarum/admin/app';
 import { _serverDateChangeAt, _toServerTimezone } from '../common';
+import utc from 'dayjs/plugin/utc'
+import timezone from 'dayjs/plugin/timezone'
 
 app.initializers.add('xypp/flarum-localize-date-lib', () => {
+  dayjs.extend(utc);
+  dayjs.extend(timezone);
+
   app.extensionData
     .for('xypp-localize-date-lib')
     .registerSetting({
