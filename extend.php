@@ -23,7 +23,7 @@ return [
         ->default("xypp.localize-date.timezone", "UTC")
         ->serializeToForum("xypp.localize-date.timezone", "xypp.localize-date.timezone"),
     (new Extend\Console())
-        // ->command(Console\DateChangeCommand::class)
+        ->command(Console\DateChangeCommand::class)
         ->schedule(Console\DateChangeCommand::class, function ($event) {
             $event->hourly();
         }),
